@@ -1,8 +1,11 @@
 FROM centos:7
+MAINTAINER Ryan Chouinard <docker@rych-dev.com>
+ENV PHP_VERSION 5.6.16-1
 RUN yum install --assumeyes http://rpms.famillecollet.com/enterprise/remi-release-7.rpm \
       && yum install --enablerepo=remi-php56 --assumeyes \
            ca-certificates \
-           php-fpm \
+           php-cli-${PHP_VERSION}.el7.remi \
+           php-fpm-${PHP_VERSION}.el7.remi \
            php-gd \
            php-intl \
            php-mbstring \
